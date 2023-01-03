@@ -3,6 +3,7 @@ import user from './assets/user.svg';
 
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
+const axios = require('axios');
 
 let loadInterval;
 
