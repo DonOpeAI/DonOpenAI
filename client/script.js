@@ -113,3 +113,19 @@ form.addEventListener('keyup', (e) => {
     handleSubmit(e);
   }
 })
+
+const text = "This is a sample text.";
+
+axios.post('https://api.openai.com/v1/language/detect', {
+  text: text
+}, {
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer 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`
+  }
+}).then(response => {
+  const language = response.data.language;
+  console.log(`The language of the text is: ${language}`);
+}).catch(error => {
+  console.error(error);
+});
